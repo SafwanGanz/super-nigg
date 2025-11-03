@@ -117,3 +117,5 @@ This is a fan-made project for educational purposes.
 
 Original vanilla JavaScript version: [mario-maker-master](https://github.com/pratishshr/mario-maker)
 Next.js conversion: Complete TypeScript rewrite with all features preserved
+
+
