@@ -136,6 +136,7 @@ mario-maker-nextjs/
 - **Viewport Configuration**: Prevents zoom and ensures full-screen experience
 - **Landscape Optimization**: Primary design for horizontal gameplay
 
+<<<<<<< HEAD
 ### State Management
 - **React Hooks**: useState, useEffect, useRef for component state
 - **Game Loop**: Custom game engine with physics and collision detection
@@ -202,3 +203,9 @@ If you encounter any issues or have questions:
 **Made with ❤️ and Next.js**
 
 *Play responsibly! This is a fan-made project and is not affiliated with Nintendo.*
+=======
+Original vanilla JavaScript version: [mario-maker-master](https://github.com/pratishshr/mario-maker)
+Next.js conversion: Complete TypeScript rewrite with all features preserved
+
+
+>>>>>>> 45e411e5fbafb3d4291cfe1191533c6fc1cd7607
