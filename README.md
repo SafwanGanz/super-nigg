@@ -1,6 +1,8 @@
 # Super Nigg
 
-A browser-based Mario Maker game built with Next.js, TypeScript, and HTML5 Canvas. Create custom Mario levels, play built-in stages, and share your creations!
+A Mario Maker game built with Next.js, TypeScript, and HTML5 Canvas. Create custom Mario levels, play built-in stages, and share your creations!
+
+**Play in your browser or download the Android APK!** 📱🎮
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.0.0-black)
 ![React](https://img.shields.io/badge/React-18.3.1-blue)
@@ -50,11 +52,13 @@ A browser-based Mario Maker game built with Next.js, TypeScript, and HTML5 Canva
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Option 1: Play in Browser (Web Version)
+
+#### Prerequisites
 - Node.js 20.x or higher
 - npm or yarn package manager
 
-### Installation
+#### Installation
 
 1. Clone the repository:
 ```bash
@@ -83,6 +87,15 @@ http://localhost:3000
 npm run build
 npm start
 ```
+
+### Option 2: Play on Android (Mobile APK)
+
+1. Navigate to `apk/app/release/` directory
+2. Copy the APK file to your Android device
+3. Enable "Install from Unknown Sources" in your device settings
+4. Install and play!
+
+**No build required - the APK is ready to use!**
 
 ## 📱 Mobile Support
 
@@ -169,9 +182,23 @@ Game physics can be adjusted in:
 - `utils/game/Enemy.ts` - Enemy behavior
 - `utils/game/MarioGame.ts` - Global game settings
 
-## 📦 Building Android APK
+## � Android APK
 
-The project includes Android build configuration in the `apk/` directory:
+### Ready-to-Install APK
+
+A pre-built Android APK is already available! Check the `apk/app/release/` directory for the compiled APK file that you can install directly on your Android device.
+
+### APK Source Code
+
+The complete Android application source code is located in the `apk/` directory, including:
+- Full Gradle build configuration
+- Android app source files
+- Build scripts and dependencies
+- Release configurations
+
+### Building APK from Source (Optional)
+
+If you want to rebuild the APK yourself:
 
 1. Ensure Android SDK is installed
 2. Navigate to the apk directory:
@@ -182,6 +209,8 @@ cd apk
 ```bash
 ./gradlew assembleRelease
 ```
+
+The compiled APK will be available in `apk/app/release/`
 
 ## 🤝 Contributing
 
