@@ -212,15 +212,6 @@ cd apk
 
 The compiled APK will be available in `apk/app/release/`
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📝 License
 
@@ -255,9 +246,10 @@ All game assets (sprites, sounds) are for educational and demonstration purposes
 
 ## 🙏 Acknowledgments
 
-- Inspired by Nintendo's Super Mario Maker
-- Built with modern web technologies
-- Community feedback and contributions
+- Inspired by and built upon [mario-maker](https://github.com/pratishshr/mario-maker) by [@pratishshr](https://github.com/pratishshr)
+- Game assets and project backbone from the original mario-maker project
+- Adapted and enhanced with Next.js, TypeScript, and Android support
+- Thanks to Nintendo for the original Super Mario franchise that inspired this project
 
 ---
 
