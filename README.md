@@ -18,7 +18,7 @@ A Mario Maker game built with Next.js, TypeScript, and HTML5 Canvas. Create cust
 - **HTML** - Markup via JSX/TSX components
 
 ### Additional
-- **Java** - Android APK build configuration (Gradle)
+- **Kotlin** - Android APK application code
 - **Groovy** - Gradle build scripts
 
 ## 🎮 Features
