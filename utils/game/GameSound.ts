@@ -20,7 +20,10 @@ export class GameSound {
     if (sound) {
       sound.pause();
       sound.currentTime = 0;
-      sound.play();
+      sound.play().catch((error) => {
+        // Ignore play interruption errors
+        console.debug('Audio play interrupted:', error);
+      });
     }
   }
 }

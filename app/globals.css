@@ -9,36 +9,378 @@
   box-sizing: border-box;
 }
 
+html,
 body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   font-family: SuperMario256, sans-serif;
+  position: fixed;
+  -webkit-overflow-scrolling: touch;
 }
 
-.start-screen {
-  width: 1280px;
-  height: 530px;
-  margin: 0 auto;
-  border: 1px solid black;
-  background: url('/images/start-screen.png');
+/* Mobile-first: Landscape Layout */
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #5c94fc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.game-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  overflow: hidden;
   position: relative;
+  padding: 0;
+  margin: 0;
 }
 
+.score-nav {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(173, 209, 243, 0.95);
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.back-btn-nav {
+  width: 50px;
+  height: 50px;
+  background: rgba(231, 76, 60, 0.9);
+  border: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  line-height: 1;
+}
+
+.back-btn-nav:hover {
+  background: rgba(231, 76, 60, 1);
+}
+
+.back-btn-nav:active {
+  background: rgba(192, 57, 43, 1);
+}
+
+.game-screen {
+  width: 100vw;
+  flex: 1;
+  border: none;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  margin: 0;
+  padding: 0;
+  object-fit: fill;
+}
+
+.score-wrapper {
+  flex: 1;
+  height: 50px;
+  padding: 0 15px;
+  border: none;
+  line-height: 50px;
+  font-size: 16px;
+  background-color: transparent;
+  font-family: SuperMario256;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Small mobile screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  .score-nav {
+    height: 40px;
+  }
+
+  .score-wrapper {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .back-btn-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .life-count,
+  .coin-score {
+    background-size: 24px;
+    padding-left: 30px;
+    min-width: 70px;
+    font-size: 14px;
+  }
+
+  .level-num {
+    min-width: 80px;
+    font-size: 14px;
+  }
+
+  .game-screen {
+    max-height: calc(100vh - 40px);
+  }
+}
+
+.life-count {
+  background: url('/images/mario-head.png') left center no-repeat;
+  background-size: 28px;
+  padding-left: 35px;
+  min-width: 80px;
+}
+
+.coin-score {
+  background: url('/images/coin.png') left center no-repeat;
+  background-size: 28px;
+  padding-left: 35px;
+  min-width: 100px;
+}
+
+.level-num {
+  min-width: 100px;
+}
+
+.total-score {
+  flex: 1;
+}
+
+.btn-wrapper {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  z-index: 1001;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.back-btn {
+  width: 70px;
+  height: 32px;
+  background: url('/images/back-btn.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Desktop View (larger screens) */
+@media (min-width: 1281px) {
+  .game-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-content {
+    max-width: 1280px;
+    max-height: 530px;
+    width: 1280px;
+    height: 530px;
+  }
+
+  .game-screen {
+    width: 1280px;
+    height: 480px;
+    border: 1px solid black;
+    border-top: none;
+  }
+
+  .score-wrapper {
+    width: 1280px;
+    height: 50px;
+    padding-left: 40px;
+    border: 1px solid black;
+    border-bottom: none;
+    font-size: 20px;
+  }
+
+  .life-count {
+    width: 100px;
+    float: left;
+    padding-left: 40px;
+    background-size: 32px;
+  }
+
+  .coin-score {
+    width: 150px;
+    float: left;
+    padding-left: 40px;
+    background-size: 32px;
+  }
+
+  .level-num {
+    width: 150px;
+    float: left;
+  }
+
+  .total-score {
+    float: left;
+  }
+
+  .btn-wrapper {
+    position: relative;
+    width: 1280px;
+    height: 100px;
+    margin: 0 auto;
+    top: auto;
+    right: auto;
+  }
+
+  .back-btn {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+  }
+}
+
+/* Start Screen - Mobile Landscape First */
+.start-screen {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border: none;
+  background: url('/images/start-screen.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.start-btn,
+.editor-btn,
+.created-btn {
+  width: 160px;
+  height: 45px;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: static !important;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.start-btn {
+  background-image: url('/images/start-btn.png');
+}
+
+.editor-btn {
+  background-image: url('/images/editor-btn.png');
+}
+
+.created-btn {
+  background-image: url('/images/saved-btn.png');
+}
+
+/* Larger phones landscape */
+@media (min-width: 700px) and (max-width: 1280px) and (orientation: landscape) {
+  .start-btn,
+  .editor-btn,
+  .created-btn {
+    width: 180px;
+    height: 50px;
+  }
+}
+
+/* Desktop Start Screen */
+@media (min-width: 1281px) {
+  .start-screen {
+    width: 1280px;
+    height: 530px;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: block;
+    padding: 0;
+  }
+
+  .start-btn,
+  .editor-btn,
+  .created-btn {
+    width: 200px;
+    height: 50px;
+    position: absolute !important;
+    border-radius: 0;
+  }
+
+  .start-btn {
+    bottom: 100px !important;
+    left: 252px !important;
+  }
+
+  .editor-btn {
+    bottom: 100px !important;
+    left: 530px !important;
+  }
+
+  .created-btn {
+    bottom: 100px !important;
+    left: 810px !important;
+  }
+}
+
+/* Editor Screen - Mobile First */
 .editor-screen {
-  width: 1280px;
-  height: 480px;
-  margin: 0 auto;
-  border: 1px solid black;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border: none;
   background: url('/images/bg.png');
+  background-size: cover;
   position: relative;
   overflow: hidden;
 }
 
-.game-screen {
-  width: 1280px;
-  height: 480px;
-  border: 1px solid black;
-  border-top: none;
-  background: url('/images/bg.png');
-  margin: 0 auto;
+/* Desktop Editor Screen */
+@media (min-width: 1281px) {
+  .editor-screen {
+    width: 1280px;
+    height: 480px;
+    margin: 0 auto;
+    border: 1px solid black;
+  }
 }
 
 .score-wrapper {
@@ -260,6 +602,73 @@ body {
   position: relative;
   overflow: hidden;
   background: url('/images/bg.png');
+  background-size: cover;
+}
+
+/* Responsive Levels Wrapper */
+@media (max-width: 1280px) {
+  .levels-wrapper {
+    width: 100vw;
+    height: calc(100vw * 530 / 1280);
+    max-height: 100vh;
+    border: none;
+  }
+
+  .level-btn {
+    width: calc(248px * (100vw / 1280));
+    font-size: calc(25px * (100vw / 1280));
+    height: calc(50px * (100vw / 1280));
+  }
+
+  .delete-all-btn {
+    width: calc(100px * (100vw / 1280));
+    height: calc(100px * (100vw / 1280));
+    background-size: contain;
+  }
+
+  .no-maps {
+    width: 80vw;
+    font-size: calc(25px * (100vw / 1280));
+    padding: calc(20px * (100vw / 1280));
+  }
+
+  .element-wrapper {
+    width: 100vw;
+    height: auto;
+    padding: 10px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .levels-wrapper {
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .level-btn {
+    width: calc(50% - 4px);
+    margin: 2px;
+    font-size: 18px;
+    height: 50px;
+  }
+
+  .delete-all-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .no-maps {
+    width: 90%;
+    font-size: 18px;
+    padding: 15px;
+  }
 }
 
 .start-btn {
@@ -342,6 +751,30 @@ body {
   width: 1280px;
   height: 100px;
   margin: 0 auto;
+}
+
+/* Responsive Button Wrapper */
+@media (max-width: 1280px) {
+  .btn-wrapper {
+    width: 100vw;
+    height: auto;
+    padding: 10px;
+  }
+
+  .back-btn {
+    width: 150px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-btn {
+    width: 120px;
+    height: 35px;
+  }
 }
 
 .no-maps {

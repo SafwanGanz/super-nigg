@@ -32,6 +32,11 @@ export class MarioGame {
   private bullets: Bullet[] = [];
   private bulletFlag: boolean = false;
 
+  // Expose keys array for mobile controls
+  getKeys(): boolean[] {
+    return this.keys;
+  }
+
   private currentLevel: number = 1;
   private animationID: number = 0;
   private timeOutId: any = 0;
