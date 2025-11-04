@@ -119,7 +119,7 @@ Mobile controls automatically appear on touch-enabled devices.
 ## 🏗️ Project Structure
 
 ```
-mario-maker-nextjs/
+super-nigg/
 ├── app/                      # Next.js app directory
 │   ├── globals.css          # Global styles
 │   ├── layout.tsx           # Root layout
