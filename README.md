@@ -206,6 +206,3 @@ If you encounter any issues or have questions:
 =======
 Original vanilla JavaScript version: [mario-maker-master](https://github.com/pratishshr/mario-maker)
 Next.js conversion: Complete TypeScript rewrite with all features preserved
-
-
->>>>>>> 45e411e5fbafb3d4291cfe1191533c6fc1cd7607
